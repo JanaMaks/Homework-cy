@@ -3,7 +3,8 @@
 
 /// <reference types="cypress" />
 
-import searchquery from './../../fixtures/search.json'
+import searchquery from "./../../fixtures/search.json";
+import googlePage from "../../PageObject/google";
 
 Cypress.Commands.add('lazy', () => {
     cy.log("I'm lazy");

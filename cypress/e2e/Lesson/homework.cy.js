@@ -1,4 +1,5 @@
 /// <reference types="cypress" />
+import searchQuery from "../../fixtures/uwb_search.json";
 
 Cypress.Commands.add("closeCookiePopUp", () => {
   cy.get(".close_c").click().should("not.be.visible");
@@ -106,17 +107,37 @@ it('Sprawdź przekierowanie na stronę rekrutacji', () => {
 it('Wyszukaj pracownika w książce adresowej z użyciem przycisku "szukaj"', () => {
     cy.visit('https://www.uwb.edu.pl/');
     cy.get('.d-flex > .block-content > div > .btn').click();
-    cy.get('#query').clear().type('Ciborowski');
+    cy.get('#query').clear().type(searchQuery.query);
     cy.get('#submit_form_searchEmplyerModuleForm').click();
+    cy.url().should('contain', searchQuery.query);
 })
 
 
 //12
-it('Wyszukaj pracownika w książce adresowej z ENTEREM', () => {
+it.only('Wyszukaj pracownika w książce adresowej z ENTEREM', () => {
     cy.visit('https://www.uwb.edu.pl/');
     cy.get('.d-flex > .block-content > div > .btn').click();
-    cy.get('#query').clear().type('Robert').type('{enter}');
-    cy.url().should('contain', 'Robert');
+    cy.get('#query').clear().type(searchQuery.query2).type('{enter}');
+    cy.url().should('contain', searchQuery.query2);
 })
+
+
+// //it("Search about us with enter", () => {
+//   cy.get(".name > .d-none").click();
+//   cy.get("@searchEngine").click();
+//   cy.get("#query").clear().type(searchQuery.query).type("{enter}");
+//   cy.url().should("contain", searchQuery.query);
+// });
+// it("Search about us with click on icon", () => {
+//   cy.get(".name > .d-none").click();
+//   cy.get("@searchEngine").click();
+//   cy.get("#query").clear().type(searchQuery.query2);
+//   cy.get(".tab-pane > .input-group > .input-group-append > .btn-primary").click();
+//   cy.url().should("contain", searchQuery.query2);
+// });
+
+
+
+
 
 

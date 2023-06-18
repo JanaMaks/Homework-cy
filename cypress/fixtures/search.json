@@ -1,14 +1,12 @@
 [
- {
-    "fraza": "Wiki"
- },
- {
+   {
+     "fraza": "Wiki"
+   },
+   {
     "fraza": "Wikipedia"
- },
-
- {
-    "fraza": "Politechnika",
-    "query": "?q=Politechnika" 
- }
-
-]
+   },
+   {
+     "fraza": "Politechnika",
+     "query": "?q=Politechnika"
+   }
+ ]
