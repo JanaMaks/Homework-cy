@@ -114,7 +114,7 @@ it('Wyszukaj pracownika w książce adresowej z użyciem przycisku "szukaj"', ()
 
 
 //12
-it.only('Wyszukaj pracownika w książce adresowej z ENTEREM', () => {
+it('Wyszukaj pracownika w książce adresowej z ENTEREM', () => {
     cy.visit('https://www.uwb.edu.pl/');
     cy.get('.d-flex > .block-content > div > .btn').click();
     cy.get('#query').clear().type(searchQuery.query2).type('{enter}');
