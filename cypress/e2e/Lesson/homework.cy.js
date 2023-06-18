@@ -122,19 +122,6 @@ it.only('Wyszukaj pracownika w książce adresowej z ENTEREM', () => {
 })
 
 
-// //it("Search about us with enter", () => {
-//   cy.get(".name > .d-none").click();
-//   cy.get("@searchEngine").click();
-//   cy.get("#query").clear().type(searchQuery.query).type("{enter}");
-//   cy.url().should("contain", searchQuery.query);
-// });
-// it("Search about us with click on icon", () => {
-//   cy.get(".name > .d-none").click();
-//   cy.get("@searchEngine").click();
-//   cy.get("#query").clear().type(searchQuery.query2);
-//   cy.get(".tab-pane > .input-group > .input-group-append > .btn-primary").click();
-//   cy.url().should("contain", searchQuery.query2);
-// });
 
 
 
